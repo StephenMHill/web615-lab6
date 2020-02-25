@@ -12,6 +12,7 @@
 
 class Comment < ApplicationRecord
   belongs_to :article
+  belongs_to :users
 
   validates :message, presence: true
 end

@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
+<h1>Comments</h1>
+<table>
+  <thead>
+  <tr>
+    <th>Comments</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <%@user.comments.each do |post| %>
+    <tr>
+      <td><% post.message %></td>
+      <td><% link_to "Post", post %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

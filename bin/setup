@@ -44,5 +44,5 @@ chdir APP_ROOT do
   # system! 'bin/rails restart'
 
   puts "\n== Starting Docker =="
-  system! 'docker-compose up --build'
+  system! 'sudo docker-compose up --build'
 end
