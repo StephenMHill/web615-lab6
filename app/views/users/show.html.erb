@@ -3,19 +3,26 @@
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
 
-<h1>Comments</h1>
-<table>
-  <thead>
-  <tr>
-    <th>Comments</th>
-    <th></th>
-  </tr>
-  </thead>
+
   <tbody>
-  <%@user.comments.each do |post| %>
+  <% @user.articles.each do |article| %>
     <tr>
-      <td><% post.message %></td>
-      <td><% link_to "Post", post %></td>
+      <td><%= article.title %></td>
+      <td><%= article.content %></td>
+      <td><%= link_to 'Show', article %></td>
+      <td><%= link_to 'Edit', edit_article_path(article) %></td>
+      <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+
+  <tbody>
+  <% @user.comments.each do |comment| %>
+    <tr>
+      <td><%= comment.message %></td>
+      <td><%= link_to 'Show', article %></td>
+      <td><%= link_to 'Edit', edit_article_path(article) %></td>
+      <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
   </tbody>

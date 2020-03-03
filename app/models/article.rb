@@ -12,7 +12,7 @@
 
 class Article < ApplicationRecord
   has_many :comments
-  belongs_to :users
+  belongs_to :user
 
   validates :title, presence: true
   validates :content, presence: true

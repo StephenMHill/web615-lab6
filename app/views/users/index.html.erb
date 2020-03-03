@@ -9,12 +9,10 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody>q
     <% @users.each do |user| %>
       <tr>
         <td><%= user.email %></td>
-        <td><%= user.article %></td>
-        <td><%= user.comment %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
